@@ -20,13 +20,14 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class LoginStepDefinition {
 
-    @Before
+    /*@Before
     public void setUp(){
         OnStage.setTheStage(new OnlineCast());
-    }
+    }*/
 
     @Given("That (.*) open Swag Labs app")
     public void thatUserOpenSwagLabsApp(String actor) {
+        OnStage.setTheStage(new OnlineCast());
         theActorCalled(actor).wasAbleTo(Open.app());
     }
 

@@ -7,7 +7,7 @@ import net.serenitybdd.screenplay.targets.Target;
 import static co.com.devco.automation.mobile.locator.ElementFinder.theElementBy;
 import static co.com.devco.automation.mobile.locator.Locator.locator;
 
-public class LoginPage extends PageObject {
+public class LoginPage {
     public static final Locator TXT_USERNAME_LOCATOR = locator().withAndroidXpathStatic("//android.widget.EditText[@content-desc='test-Username']" )
             .withIosAccesibilityId("test-Username" );
     public static final Locator TXT_PASSWORD_LOCATOR = locator().withAndroidXpathStatic("//android.widget.EditText[@content-desc='test-Password']" )

@@ -14,7 +14,7 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPres
 
 public class EnterThe implements Task {
 
-    private UserModel userModel;
+    private final UserModel userModel;
 
     public EnterThe(UserModel userModel){
         this.userModel=userModel;

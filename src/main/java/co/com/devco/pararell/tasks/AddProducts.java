@@ -19,7 +19,7 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isClic
 
 public class AddProducts implements Task {
 
-    private List<Map<String, String>> nameProduct;
+    private final List<Map<String, String>> nameProduct;
 
     public AddProducts(List<Map<String, String>> nameProduct) {
         this.nameProduct = nameProduct;

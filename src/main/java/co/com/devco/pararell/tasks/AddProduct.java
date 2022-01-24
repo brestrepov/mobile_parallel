@@ -11,7 +11,7 @@ import static co.com.devco.pararell.userinterfaces.ProductPage.BTN_ADD_TO_CART;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class AddProduct implements Task {
-    private String nameProduct;
+    private final String nameProduct;
 
     public AddProduct(String nameProduct) {
         this.nameProduct = nameProduct;

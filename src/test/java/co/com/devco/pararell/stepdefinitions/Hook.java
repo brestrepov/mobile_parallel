@@ -12,8 +12,9 @@ import java.util.logging.Logger;
 import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getProxiedDriver;
 
 public class Hook {
-    @Managed(driver = "Appium" )
-    public static WebDriver thePhone;
+    //@Managed(driver = "Appium" )
+    //public static WebDriver thePhone;
+    public static AppiumDriver thePhone;
     private static boolean beforeAll = true;
 
     @Before
@@ -32,9 +33,12 @@ public class Hook {
     @After
     public void logOut() {
         try {
-            WebDriver facade = getProxiedDriver();
+            /*WebDriver facade = getProxiedDriver();
             ((AppiumDriver) facade).closeApp();
-            ((AppiumDriver) facade).launchApp();
+            ((AppiumDriver) facade).launchApp();*/
+            AppiumDriver facade = getProxiedDriver();
+            facade.closeApp();
+            facade.launchApp();
         } catch (Exception ex) {
             Logger.getAnonymousLogger().log(Level.WARNING, "Could not close driver. AppiumDriver not found", ex);
         }

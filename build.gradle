@@ -4,6 +4,7 @@ version '1.0-SNAPSHOT'
 apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'net.serenity-bdd.aggregator'
+apply plugin: 'co.com.bancolombia.serenity-parallel-execution-plugin'
 
 //sourceCompatibility = 1.8
 
@@ -18,10 +19,14 @@ buildscript {
     repositories {
         mavenCentral()
         mavenLocal()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
     }
     dependencies {
         classpath("net.serenity-bdd:serenity-gradle-plugin:2.2.2")
         classpath("net.serenity-bdd:serenity-single-page-report:2.2.2")
+        classpath "gradle.plugin.co.com.bancolombia.certification:serenity-parallel-execution-plugin:1.0.3"
     }
 }
 
@@ -51,5 +56,14 @@ test.finalizedBy(aggregate)
 
 test {
     ignoreFailures = true
+}
+
+wrapper {
+    gradleVersion = '7.1'
+}
+
+
+task parallel(type: ParallelTests, dependsOn: 'clean') {
+    srcDirName = 'parallel'
 }
 gradle.startParameter.continueOnFailure = true

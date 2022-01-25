@@ -6,18 +6,18 @@ Feature: Use Shopping Cart
       | username      | password     |
       | standard_user | secret_sauce |
 
-  @oneproduct
+  @oneProduct
   Scenario: Buy product
     When He puts in the cart the Sauce Labs Backpack
     And He does the checkout of his purchase
     Then He should see that his purchase is successful
 
-  @manyproducts
+  @manyProducts
   Scenario: Buy product
     When He puts in the cart these products
-      | products                 |
-      | Sauce Labs Backpack      |
-      | Sauce Labs Bike Light    |
+      | products              |
+      | Sauce Labs Backpack   |
+      | Sauce Labs Bike Light |
 #      | Sauce Labs Fleece Jacket |
     And He does the checkout of his purchase
     Then He should see that his purchase is successful

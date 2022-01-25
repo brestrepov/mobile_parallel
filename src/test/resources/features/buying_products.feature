@@ -6,11 +6,11 @@ Feature: Use Shopping Cart
       | username      | password     |
       | standard_user | secret_sauce |
 
-#  @oneproduct
-#  Scenario: Buy product
-#    When He puts in the cart the Sauce Labs Backpack
-#    And He does the checkout of his purchase
-#    Then He should see that his purchase is successful
+  @oneproduct
+  Scenario: Buy product
+    When He puts in the cart the Sauce Labs Backpack
+    And He does the checkout of his purchase
+    Then He should see that his purchase is successful
 
   @manyproducts
   Scenario: Buy product
